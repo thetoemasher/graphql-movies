@@ -1,0 +1,17 @@
+type Query {
+    films(query: String): [Movie!]!
+    favorites: [Movie!]!
+    # searchFilms(query: String!): [Movie!]!
+}
+
+type Mutation {
+    addToFavorites(id: ID!, title: String!, poster_path: String, overview: String!): Movie
+    deleteFavorite(id: ID!): Movie
+}
+
+type Movie {
+    id: ID!
+    title: String!
+    poster_path: String
+    overview: String!    
+}
